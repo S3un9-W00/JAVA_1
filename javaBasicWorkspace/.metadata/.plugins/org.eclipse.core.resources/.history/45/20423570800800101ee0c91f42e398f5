@@ -1,0 +1,66 @@
+package chap_04;
+
+public class _05_For {
+	public static void main(String[] args) {
+//		for문은 정해진 횟수만큼 반복할 때 사용하는 반복문이다.
+//		초기값 -> 조건 검사 -> 실행 -> 증감순으로 흐름이 진행된다.
+		
+//		반복문을 쓰지 않는 경우
+		System.out.println("어서오세요. 성일정보고입니다.");
+		System.out.println("어서오세요. 성일정보고입니다.");
+		System.out.println("어서오세요. 성일정보고입니다.");
+		System.out.println("어서오세요. 성일정보고입니다.");
+		System.out.println("어서오세요. 성일정보고입니다.");
+		System.out.println("어서오세요. 성일정보고입니다.");
+		System.out.println("어서오세요. 성일정보고입니다.");
+		System.out.println("어서오세요. 성일정보고입니다.");
+		
+//		어서오세요를 -> 환영합니다로 변경 or 성잃정보고를 소프트웨어개발과로 변경
+		System.out.println("환영합니다. 성일정보고입니다.");
+		System.out.println("환영합니다. 성일정보고입니다.");
+		System.out.println("환영합니다. 성일정보고입니다.");
+		System.out.println("환영합니다. 성일정보고입니다.");
+		System.out.println("환영합니다 소프트웨어개발과입니다.");
+		System.out.println("환영합니다 소프트웨어개발과입니다.");
+		System.out.println("환영합니다 소프트웨어개발과입니다.");
+		System.out.println("환영합니다 소프트웨어개발과입니다.");
+		
+		System.out.println("\n==== 여기부터 반복문 사용 ====\n");
+		
+//		for(초기값; 조건; 증감) {
+//			실핼할 코드
+//		}
+		
+		for(int i = 0; i < 10; i++) {
+			System.out.println("환영합니다 소프트웨어개발과입니다.");
+		}
+		
+		//짝수만 출력 0 2 4 6 8
+//		홀수만 출력 1 3 5 7 9
+//		거꾸로 출력 5 4 3 2 1
+//		1부터 10까지의 합 출력
+		
+		//짝수
+		for(int i = 0; i < 10; i++) {
+			if(i % 2 == 0) {
+				System.out.print(i + " ");
+			}
+		}
+		System.out.println();
+		
+		//홀수
+		for(int i = 0; i < 10; i++) {
+			if(i % 2 == 1) {
+				System.out.print(i + " ");
+			}
+		}
+		System.out.println();
+		
+		//거꾸로 출력하기
+		for(int i = 10; i > 0; i--) {
+			System.out.print(i + " ");
+		}
+		
+		System.out.println();
+	}
+}

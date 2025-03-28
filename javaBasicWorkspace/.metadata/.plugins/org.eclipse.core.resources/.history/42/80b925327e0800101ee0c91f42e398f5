@@ -1,0 +1,63 @@
+package chap_04;
+
+public class _04_SwitchCase {
+	public static void main(String[] args) {
+//		switch-case는 여러 개의 조건을 비교할 때 사용하며,
+//		각 조건이 정해진 값 중 하나일 때 유용하다.
+//		조건이 많고, 값이 고정된 경우 if-else보다 더 깔끔하게 표현할 수 있다.
+		
+//		석차에 따른 장학금 지급
+//		1등 : 전액 장학금
+//		2, 3등 : 반액 장학금
+//		4~10등 : 소액 장학금
+//		그 외 : 장학금 대상 아님
+		
+		int ranking = 4;
+		
+		if(ranking == 1) {
+			System.out.println("전액 장학금");
+		} else if (ranking == 3 || ranking == 2) {
+			System.out.println("반액 장학금");
+		} else if (ranking >= 4 && ranking <= 10) {
+			System.out.println("소액 장학금");
+		} else {
+			System.out.println("장학금 대상 아님");
+		}
+		System.out.println("조회 완료 #1\n");
+		
+		//switch-case 사용
+		ranking = 2;
+		switch (ranking) {
+		case 1:
+			System.out.println("전액 장학금");
+			break;
+		case 2: case 3:
+			System.out.println("반액 장학금");
+			break;
+		case 4: case 5: case 6: case 7: case 8: case 9: case 10:
+			System.out.println("소액 장학금");
+			break;
+		default:
+			System.out.println("장학금 대상 아님");
+		}
+		System.out.println("조회 완료 #2\n");
+		
+		//중고 상품 등급에 따른 가격 계산
+		// 1등급 price에 3000원 추가, 2등급 2000원 추가ㅡ 3등급 1000원 추가
+		
+		int grade = 1;
+		int price = 7000;
+		
+		switch(grade) {
+		case 1:
+			price += 1000;
+		
+		case 2:
+			price += 1000;
+		
+		case 3:
+			price += 1000;
+		}
+		System.out.println(grade + "등급 제품의 가격 : " + price + "원");		
+	}
+}

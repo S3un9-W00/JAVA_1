@@ -1,0 +1,12 @@
+package chap_03;
+import java.util.*;
+
+public class _Quiz_03 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String jumin = sc.next();
+		
+//		System.out.println("당신의 주민등록번호는 : " + jumin.substring(0, 8));
+		System.out.println("당신의 주민등록번호는 : " + jumin.substring(jumin.indexOf(0), jumin.indexOf("-" + 1)));
+	}
+}

@@ -40,6 +40,7 @@ public class _Exam_04 {
 		for(int i = 1; i <= 100; i++) {
 			if(i%7==0 && i%9==0) {
 				System.out.println(i);
+				break;
 			}
 		}
 		System.out.println("===========================");
@@ -54,5 +55,6 @@ public class _Exam_04 {
 			}
 			System.out.println("===========================");
 		}
+		sc.close();
 	}
 }

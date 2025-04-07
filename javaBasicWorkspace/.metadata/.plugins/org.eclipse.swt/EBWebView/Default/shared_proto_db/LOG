@@ -1,2 +1,3 @@
-2025/04/07-09:19:58.605 23b0 Creating DB C:\Java\javaBasicWorkspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db since it was missing.
-2025/04/07-09:19:58.607 23b0 Reusing MANIFEST C:\Java\javaBasicWorkspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db/MANIFEST-000001
+2025/04/07-15:57:07.899 23fc Reusing MANIFEST C:\Java\javaBasicWorkspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db/MANIFEST-000001
+2025/04/07-15:57:07.901 23fc Recovering log #3
+2025/04/07-15:57:07.901 23fc Reusing old log C:\Java\javaBasicWorkspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db/000003.log 

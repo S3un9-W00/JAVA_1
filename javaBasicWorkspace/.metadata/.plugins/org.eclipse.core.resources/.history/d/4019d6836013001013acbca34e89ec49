@@ -1,0 +1,33 @@
+package chap_05;
+
+public class _05_Quiz05 {
+	public static void main(String[] args) {
+//		신발 사이즈는 250부터 295까지 5단위로 증가하며
+//		총 10가지 사이즈가 있다고 가정하자.
+//		아래와 같이 출력하는 프로그램을 작성하시오.
+//		
+//		사이즈 250 (재고 있음)
+//		사이즈 255 (재고 있음)
+//		...
+//		사이즈 295 (재고 있음)
+//		
+//		배열 생성
+//		
+//		값 할당
+//		
+//		값 출력
+		
+		int[] size = new int[10];
+		
+		int sizess = 250;
+		
+		for(int i = 0; i < size.length; i++) {
+			size[i] = sizess;
+			sizess += 5;
+		}
+		
+		for(int i = 0; i < size.length; i++) {
+			System.out.printf("사이즈 %d (재고 있음) \n", size[i]);
+		}
+	}
+}

@@ -1,0 +1,60 @@
+package chap_05;
+
+public class _04_MultiArrayLoop {
+	public static void main(String[] args) {
+//		1. 고정 크기 2차원 배열
+		String[][] seats =  {
+				{"A1", "A2", "A3", "A4", "A5"},
+				{"B1", "B2", "B3", "B4", "B5"},
+				{"C1", "C2", "C3", "C4", "C5"}
+		};
+		
+//		for(int i = 0; i < seats.length; i++) {
+//			for(int j = 0; j < seats[i].length; j++) {
+//				System.out.print(seats[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 5; j++) {
+				System.out.print(seats[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println("==================================================");
+		
+//		2. 가변 배열
+		String[][] seats2 = {
+				{"A1", "A2", "A3"},
+				{"B1", "B2", "B3", "B4"},
+				{"C1", "C2", "C3", "C4", "C5"}
+		};
+		
+//		가변 크기 2차원 배열의 전체 순회
+//		배열이름.length -> 배열의 행 크기(길이)
+//		배열이름[i].length -> 배열의 i행의 크기, 즉 i행의 몇 개의 열이 있는지 보여준다.
+		for(int i = 0; i < seats2.length; i++) {
+			for(int j = 0; j < seats2[i].length; j++) {
+				System.out.print(seats2[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+//		A행부터 J까지 총 10행 그리고 각 행마다 15개의 시트가 있는 극장을 구성하시오.
+		
+		String[][] gukjang = new String[10][15];
+		
+		String[] alpha = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+		
+		for(int i = 1; i < gukjang.length+1; i++) {
+			for(int j = 0; j < gukjang[i].length; j++) {
+				gukjang[i][j] = alpha[i] + j;
+				System.out.print(gukjang[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+		
+	}
+}

@@ -1,0 +1,13 @@
+package chap_05;
+
+public class _02_ArrayLoop {
+	public static void main(String[] args) {
+//		배열 선언
+		String[] coffees = {"아메리카노", "카페모카", "라떼", "할메리카노"};
+		
+//		기본 for문을 이용한 배열 순회
+		for (int i = 0; i < 4; i++) {
+			System.out.println(coffees[i] + " 하나");
+		}
+	}
+}

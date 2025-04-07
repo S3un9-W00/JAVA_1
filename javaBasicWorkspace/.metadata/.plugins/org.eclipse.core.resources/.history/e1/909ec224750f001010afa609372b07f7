@@ -1,0 +1,32 @@
+package chap_05;
+
+public class _02_ArrayLoop {
+	public static void main(String[] args) {
+//		배열 선언
+		String[] coffees = {"아메리카노", "카페모카", "라떼", "할메리카노", "딸기라떼", "꿀아메리카노"};
+		
+//		기본 for문을 이용한 배열 순회
+		for (int i = 0; i < 5; i++) {	// 범위가 배열의 길이보다 크면 오류 발생.
+			System.out.println(coffees[i] + " 하나");
+		}
+		System.out.println("주세요!");
+		
+//		배열의 길이(length)를 이용한 배열 순회 (위 처럼 직접 값을 바꿀 필요 없음!)
+		for (int i = 0; i < coffees.length; i++) {
+			System.out.println(coffees[i] + " 하나");
+		}
+		System.out.println("주세요!");
+//		배열의 길이를 자동으로 확인하므로 안정적 (첫 번째 for문은 불안정함.)
+//		배열의 길이가 길어지거나 줄어들어도 코드 수정이 필요 없음
+		
+		// 항상된 for문(for-each문)
+		System.out.println("=== for-each ===");
+		for (String coffee : coffees) {  	// coffees 배열에서 하나씩 쓰겠다!
+			System.out.println(coffee + " 하나");
+		}
+		System.out.println("주세요!");
+//		배열에서 값을 하나씩 꺼내주는 방식
+//		인덱스가 필요 없는 경우 가장 간단하고 직관적
+//		배열 전체를 순회할 때 유용
+	}
+}

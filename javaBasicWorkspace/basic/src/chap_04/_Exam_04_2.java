@@ -1,78 +1,61 @@
 package chap_04;
-import java.util.*;
+
+import java.util.Scanner;
 
 public class _Exam_04_2 {
 	public static void main(String[] args) {
 //		문제 설명
-//		1~50 사이의 숫자 중 하나를 정답으로 설정한다. (예:27)
+//		1~50 사이의 숫자 중 하나를 정답으로 설정한다. (예: 27)
 //		사용자가 숫자를 입력하여 정답을 맞추는 게임이다.
 //		입력한 숫자가 정답보다 크면 "DOWN", 작으면 "UP"을 출력한다.
-//		정답을 맞추면 "정답입니다!"를 출력하고 종료한다.
+//		정답을 맞추면 "정답입니다!"를 출력하고 종료합니다.
 		
 //		추가 1. 횟수제한(7번)
-//		추가 2. 점수시스템(7-시도한횟수 * 1000점)
+//		추가 2. 점수시스템 (7-시도한 횟수 *                                         1000점)
 //		추가 3. 게임 다시 시작 여부 확인
 		
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner (System.in);
+		boolean playAgain = true;
 		
-		int setO =(int) (Math.random()*50)+1;
-		
-		int avild = 0;
-		int score = 0;
-		
-		while(true) {
-			System.out.print("num >> ");
-			int setnum = sc.nextInt();
+		while (playAgain) {
+			int answer = (int)(Math.random() * 50) + 1;
+			int triesLeft = 7;    			// 횟수제한
+			int score = 0;					// 시작 점수
 			
-			if(setnum < setO) {
-				System.out.println("UP");
-				if(avild <= 7) {
-					avild++;
-				} else {
-					System.out.println("횟수 초과");
-					System.out.print("다시 하시겠습니까? <1>네 <2~>아니요 >> ");
-					int choice = sc.nextInt();
-					if(choice == 1) {
-						continue;
-					} else {
-						break;
-					}
-				}
+			System.out.println("게임 시작 (1~50) ");
+			
+			while (triesLeft > 0) {
+				System.out.println("숫자 입력 (" + triesLeft + "번 남음)");
+				int guess = sc.nextInt();
 				
-				
-			} else if(setnum > setO) {
-				System.out.println("DOWN");
-				if(avild <= 7) {
-					avild++;
-				} else {
-					System.out.println("횟수 초과");
-					System.out.print("다시 하시겠습니까? <1>네 <2~>아니요 >> ");
-					int choice = sc.nextInt();
-					if(choice == 1) {
-						avild = 0;
-						choice = 0;
-						continue;
-					} else {
-						break;
-					}
-				}
-			} else if(setnum == setO) {
-				System.out.println("정답입니다.");
-				System.out.println("점수 : " + ((7-(avild)) * 1000));
-				System.out.print("다시 하시겠습니까? <1>네 <2~>아니요 >> ");
-				int choice = sc.nextInt();
-				if(choice == 1) {
-					avild = 0;
-					choice = 0;
-					continue;
-				} else {
+				if (guess == answer) {				
+					score = triesLeft * 1000;
+					System.out.println("정답입니다!");
+					System.out.println("현재 점수 : " + score + "점");
 					break;
+				} else if (guess < answer) {
+					System.out.println("UP");
+				} else {
+					System.out.println("DOWN");
 				}
-			} else {
-				System.out.println("?");
-			}
+				
+				triesLeft--;
 		}
-		
+			
+			if (triesLeft == 0) {
+				System.out.println("기회 모두 소진");
+				System.out.println("정답은 " + answer + "입니다.");
+			}
+			
+			System.out.println("게임 제시작? (y/n)");
+			String again = sc.next();
+			
+			if (!again.equalsIgnoreCase("y")) {				// 대소문자 구분 X. (IgnoreCase)
+				playAgain = false;
+				System.out.println("게임을 종료합니다.");
+			}
+			System.out.println();			
+		}
 		sc.close();
 	}
 }

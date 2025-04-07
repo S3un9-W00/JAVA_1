@@ -1,0 +1,37 @@
+package chap_04;
+
+import java.util.Scanner;
+
+public class _Exam_04_2 {
+	public static void main(String[] args) {
+//		문제 설명
+//		1~50 사이의 숫자 중 하나를 정답으로 설정한다. (예: 27)
+//		사용자가 숫자를 입력하여 정답을 맞추는 게임이다.
+//		입력한 숫자가 정답보다 크면 "DOWN", 작으면 "UP"을 출력한다.
+//		정답을 맞추면 "정답입니다!"를 출력하고 종료합니다.
+		
+//		추가 1. 횟수제한(7번)
+//		추가 2. 점수시스템 (7-시도한 횟수 * 1000점)
+//		추가 3. 게임 다시 시작 여부 확인
+		
+		Scanner sc = new Scanner (System.in);
+		int num = (int)(Math.random() * 50) + 1;
+		
+		
+		while (true) {
+			System.out.println("숫자 입력 (1~50) : ");
+			int s = sc.nextInt();
+			int a = 7;  int b = 6;
+			if (s > num) {
+				System.out.println("DOWN");
+			} else if (s < num) {
+				System.out.println("UP");
+			} else {
+				s < (7>b) * 1000;
+				System.out.println("정답입니다!");
+				break;
+			}
+		}
+
+	}
+}

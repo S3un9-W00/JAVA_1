@@ -1,0 +1,61 @@
+package chap_04;
+
+import java.util.Scanner;
+
+public class _Exam_04_2 {
+	public static void main(String[] args) {
+//		문제 설명
+//		1~50 사이의 숫자 중 하나를 정답으로 설정한다. (예: 27)
+//		사용자가 숫자를 입력하여 정답을 맞추는 게임이다.
+//		입력한 숫자가 정답보다 크면 "DOWN", 작으면 "UP"을 출력한다.
+//		정답을 맞추면 "정답입니다!"를 출력하고 종료합니다.
+		
+//		추가 1. 횟수제한(7번)
+//		추가 2. 점수시스템 (7-시도한 횟수 * 1000점)
+//		추가 3. 게임 다시 시작 여부 확인
+		
+		Scanner sc = new Scanner (System.in);
+		boolean playAgain = true;
+		
+		while (playAgain) {
+			int answer = (int)(Math.random() * 50) + 1;
+			int triesLeft = 7;    			// 횟수제한
+			int score = 0;					// 시작 점수
+			
+			System.out.println("게임 시작 (1~50) ");
+			
+			while (triesLeft > 0) {
+				System.out.println("숫자 입력 (" + triesLeft + "번 남음)");
+				int guess = sc.nextInt();
+				
+				if (guess == answer) {				
+					score = triesLeft * 1000;
+					System.out.println("정답입니다!");
+					System.out.println("현재 점수 : " + score + "점");
+					break;
+				} else if (guess < answer) {
+					System.out.println("UP");
+				} else {
+					System.out.println("DOWN");
+				}
+				
+				triesLeft--;
+		}
+			
+			if (triesLeft == 0) {
+				System.out.println("기회 모두 소진");
+				System.out.println("정답은 " + answer + "입니다.");
+			}
+			
+			System.out.println("게임 제시작? (y/n)");
+			String again = sc.next();
+			
+			if (!again.equalsIgnoreCase("y")) {				// 대소문자 구분 X. (IgnoreCase)
+				playAgain = false;
+				System.out.println("게임을 종료합니다.");
+			}
+			System.out.println();			
+		}
+		sc.close();
+	}
+}

@@ -1,0 +1,33 @@
+package chap_05;
+
+public class _05_ASCII {
+	public static void main(String[] args) {
+//		아스키 코드(ASCII) : 문자와 숫자 간의 매핑
+//		컴퓨터는 문자를 숫자로 저장하기 때문
+		char c = 'A';
+		System.out.println(c); //A
+		System.out.println((int)c); //A의 아스키코드 값은 65
+		
+		c = 'B';
+		System.out.println(c); //B
+		System.out.println((int)c); //B의 아스키코드 값은 66
+		
+		c++; //현재 변수 C에 저장된 66에 1을 더한 값을 저장한다.
+		System.out.println(c); //C
+		System.out.println((int)c); //C의 아스키코드 값은 67
+		
+//		char(문자) 타입은 실제로 숫자로 저장되기 때문에 증감연산이 가능하다.
+		
+//		좌석 자동 생성 (10행 15열)
+		String[][] seats3 = new String[10][15];
+		char ch = 'A';
+		for(int i = 0; i < seats3.length; i++) {
+			for(int j = 0; j < seats3[i].length; j++) {
+				seats3[i][j] = String.valueOf(ch) + (j + 1);
+				System.out.print(seats3[i][j] + " ");
+			}
+			ch++;
+			System.out.println();
+		}
+	}
+}
